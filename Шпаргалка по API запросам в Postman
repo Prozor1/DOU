@@ -1,0 +1,6 @@
+Шпаргалка по API запросам в Postman (JSONPlaceholder)
+Метод	URL	Тело запроса (Body → raw → JSON)	Ожидаемый результат
+POST (создать пост)	https://jsonplaceholder.typicode.com/posts	json\n{\n "title": "My Post",\n "body": "Hello world",\n "userId": 1\n}\n	201 Created. Возвращает объект с новым id.
+PUT (полное обновление)	https://jsonplaceholder.typicode.com/posts/1	json\n{\n "id": 1,\n "title": "Updated Post",\n "body": "New content here",\n "userId": 1\n}\n	200 OK. Объект полностью перезаписан.
+PATCH (частичное обновление)	https://jsonplaceholder.typicode.com/posts/1	json\n{\n "title": "Partially Updated Title"\n}\n	200 OK. Обновляется только поле title.
+GET (получить пост)	https://jsonplaceholder.typicode.com/posts/1	—	200 OK. Возвращает объект поста (с учётом PATCH/PUT, но временно — данные не сохраняются навсегда).
